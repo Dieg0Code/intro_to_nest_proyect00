@@ -7,13 +7,13 @@ import { CarsService } from 'src/cars/cars.service';
 @Injectable()
 export class SeedService {
   constructor(
-    private readonly carsService: CarsService,
-    private readonly brandServices: BrandsService,
+    private readonly carsService: CarsService, // Inject CarsService
+    private readonly brandServices: BrandsService, // Inject BrandsService
   ) {}
 
   populateDB() {
-    this.carsService.fillCarsWhitSeedData(CARS_SEED);
-    this.brandServices.fillBrandsWhitSeedData(BRANDS_SEED);
+    this.carsService.fillCarsWhitSeedData(CARS_SEED); // Call fillCarsWhitSeedData method from CarsService and pass CARS_SEED
+    this.brandServices.fillBrandsWhitSeedData(BRANDS_SEED); // Call fillBrandsWhitSeedData method from BrandsService and pass BRANDS_SEED
 
     return 'Seed executed successfully';
   }
