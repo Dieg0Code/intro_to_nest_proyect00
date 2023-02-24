@@ -91,4 +91,8 @@ export class CarsService {
     this.cars.push(newCar);
     return newCar;
   }
+
+  fillCarsWhitSeedData(carsSeed: Car[]) {
+    this.cars = carsSeed;
+  }
 }
